@@ -1,32 +1,38 @@
-<div class="displayTable">
-  <div class="displayTableCell">
 
-    <div class="authBlock">
-      <h3>Register User</h3>
-
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="email" placeholder="Email Address" #userEmail required/>
+			<input type="password"  placeholder="Password" #userPwd required/>
+			<button (click)="ngAuthService.SignUp(userEmail.value, userPwd.value)"> Sign Up</button>
       <div class="formGroup">
-        <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
-      </div>
-
-      <div class="formGroup">
-        <input type="password" class="form-control" placeholder="Password" #userPwd required>
-      </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btn-block btn-primary" value="Sign Up"
-          (click)="ngAuthService.SignUp(userEmail.value, userPwd.value)">
-      </div>
-
-      <div class="formGroup">
-        <button type="button" class="btn btn-block btn-danger" (click)="ngAuthService.GoogleAuth()">
-          Continue with Google
+        <button type="button" class="btn btn-danger btn-block" (click)="ngAuthService.GoogleAuth()">
+          Log in with Google
         </button>
       </div>
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
-    </div>
-  </div>
-
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Already have an account?</h1>
+				<button class="ghost" id="signUp"routerLink="/sign-in">Sign In</button>
+			</div>
+      
+		</div>
+	</div>
 </div>
+
