@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgAuthService } from './services/ng-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,4 @@ import { NgAuthService } from './services/ng-auth.service';
 })
 export class AppComponent {
   title: string = 'Fire Make Better';
-
-  constructor(public ngAuthService: NgAuthService) { }
 }

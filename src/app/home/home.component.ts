@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.loadingSearch = false;
     this.http
       .get<ResultRecipe>(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${textSearch}&number=16&apiKey=eefc0e51bd1e436487d83b260fe4fe86`
+        `https://api.spoonacular.com/recipes/complexSearch?query=${textSearch}&number=16&apiKey=58e2448b9b28471fa800f9360395d3a4`
       )
       .subscribe((data) => (this.recipes = data.results));
   };

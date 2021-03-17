@@ -17,7 +17,7 @@ export class RecipeComponent implements OnInit {
   getRecipe = (id: string) => {
     this.http
       .get<ResultRecipeDetail>(
-        `https://api.spoonacular.com/recipes/${id}/information?apiKey=eefc0e51bd1e436487d83b260fe4fe86`
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=58e2448b9b28471fa800f9360395d3a4`
       )
       .subscribe((data) => (this.recipe = data));
   };
