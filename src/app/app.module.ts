@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NgAuthService } from "./services/ng-auth.service";
 import { TruncatePipe } from './trunc';
 import { environment } from 'src/environments/environment';
+import { CommonModule } from '@angular/common';  
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     AngularTiltModule,

@@ -1,27 +1,29 @@
-<header>
-    <div class="logo">
-     
-      <h1 (click)="gotoTop()"routerLink="/home">Food for Thought</h1>
-    </div>
-    <ul>
-        <li> 
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-        </li>
-        <li>            
-            <a class="nav-link" routerLink="/sign-in" routerLinkActive="active">Sign In</a>
-        </li>
-        <li>
-            <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
 
-        </li>
-        <li>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="padding: 10px;">
+      <a class="navbar-brand" href="#"style="font-size:30px">Food for Thought</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"style="font-size:20px">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item" *ngIf="!ngAuthService.userState"style="font-size:20px">
+            <a class="nav-link" routerLink="/sign-in" routerLinkActive="active">Sign In</a>
+          </li>
+          <li class="nav-item" *ngIf="ngAuthService.userState"style="font-size:20px">
+            <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+          </li>
+          <li class="nav-item" *ngIf="ngAuthService.userAdmin"style="font-size:20px">
             <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li>
+          </li>
+          <li class="nav-item" *ngIf="ngAuthService.userState"style="font-size:20px">
             <a class="nav-link" (click)="ngAuthService.SignOut()" routerLinkActive="active">Sign Out</a>
-        </li>
-      </ul>
-      
-  </header>
+          </li>
+        </ul>
+      </div>
+    </nav>
+   
   <router-outlet></router-outlet>
 
