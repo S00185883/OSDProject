@@ -25,6 +25,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { ProfileComponent } from './components/profile/profile.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    ProfileComponent
+    ProfileComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
