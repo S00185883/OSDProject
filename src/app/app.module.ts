@@ -17,6 +17,15 @@ import { NgAuthService } from "./services/ng-auth.service";
 import { TruncatePipe } from './trunc';
 import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';  
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +35,13 @@ import { CommonModule } from '@angular/common';
     RecipeComponent,
     HomeComponent,
     TruncatePipe,
+    AppComponent,
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +53,9 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule, 
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule 
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService],
   bootstrap: [AppComponent],

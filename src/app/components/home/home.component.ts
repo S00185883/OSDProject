@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResultRecipe, Recipe } from '../../recipe';
+import { ResultRecipe, Recipe } from '../recipe';
 
-import { RECIPES } from '../../mock-recipes';
+import { RECIPES } from '../mock-recipes';
 
 @Component({
   selector: 'app-home',
