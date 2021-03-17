@@ -1,20 +1,20 @@
-<div class="displayTable">
-  <div class="displayTableCell">
 
-    <div class="authBlock">
-      <h3>Thank You for Signing up</h3>
 
-      <div class="formGroup" *ngIf="ngAuthService.userState as user">
-        <p class="text-center">Confirmation mail has been sent to <strong>{{user.email}}</strong>.</p>
-      </div>
+<div class="container" id="container">
 
-      <div class="formGroup">
-        <button type="button" class="btn btn-block btn-success" (click)="ngAuthService.SendVerificationMail()">
-          Resend Verification Email
-        </button>
-      </div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Thank You for Signing up</h1>
+		<br><br><br>
+    <div class="formGroup" *ngIf="ngAuthService.userState as user">
+      <p class="text-center">Confirmation mail has been sent to <strong>{{user.email}}</strong>.</p>
     </div>
-
-
+			<input type="email" placeholder="Email Address" #passwordResetEmail required/><br><br>
+			<button 
+      (click)="ngAuthService.SendVerificationMail()">Resend Verification Email</button>
+	  <BR>
+      <button  id="signUp"routerLink="/sign-in">Sign In</button> 
+   </form>
+	</div>
   </div>
-</div>
+

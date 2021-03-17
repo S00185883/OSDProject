@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
-import { Recipe } from '../recipe';
+import { Recipe } from '../../recipe';
 
 @Component({
   selector: 'app-recipe-card',

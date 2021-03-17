@@ -5,9 +5,7 @@
 		<form action="#">
 			<h1>Sign in</h1>
 			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				<a (click)="ngAuthService.GoogleAuth()" class="social"><i class="fab fa-google-plus-g"><img src="assets/android-icon-36x36.png" alt="Google Icon"></i></a>
 			</div>
 			<span>or use your account</span>
 			<input type="email"  placeholder="Email"  #userName required/>
@@ -15,11 +13,8 @@
 			<a routerLink="/forgot-password">Forgot your password?</a>
 			<button value="Sign in"
       (click)="ngAuthService.SignIn(userName.value, userPassword.value)">Sign In</button>
-      <div class="formGroup">
-        <button type="button" class="btn btn-danger btn-block" (click)="ngAuthService.GoogleAuth()">
-          Log in with Google
-        </button>
-      </div></form>
+	  <BR>
+   </form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">

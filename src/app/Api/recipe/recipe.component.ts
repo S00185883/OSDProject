@@ -3,7 +3,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
-import { ResultRecipeDetail } from '../recipe';
+import { ResultRecipeDetail } from '../../recipe';
 
 @Component({
   selector: 'app-recipe',
