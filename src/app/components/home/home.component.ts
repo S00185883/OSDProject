@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResultRecipe, Recipe } from '../recipe';
+import { ResultRecipe, Recipe } from '../../recipe';
 
-import { RECIPES } from '../mock-recipes';
+import { RECIPES } from '../../mock-recipes';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.loadingSearch = false;
     this.http
       .get<ResultRecipe>(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${textSearch}&number=16&apiKey=58e2448b9b28471fa800f9360395d3a4`
+        `https://api.spoonacular.com/recipes/complexSearch?query=${textSearch}&number=16&apiKey=eefc0e51bd1e436487d83b260fe4fe86`
       )
       .subscribe((data) => (this.recipes = data.results));
   };

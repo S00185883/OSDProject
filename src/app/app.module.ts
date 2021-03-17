@@ -9,9 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
-import { FooterComponent } from './footer/footer.component';
 import { RecipeComponent } from './recipe/recipe.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 import { TruncatePipe } from './trunc';
 
@@ -20,7 +19,6 @@ import { TruncatePipe } from './trunc';
     AppComponent,
     RecipeCardComponent,
     ListRecipesComponent,
-    FooterComponent,
     RecipeComponent,
     HomeComponent,
     TruncatePipe,
@@ -32,7 +30,7 @@ import { TruncatePipe } from './trunc';
     AngularTiltModule,
     HttpClientModule,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/fire-make-better' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/home' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
