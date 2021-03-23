@@ -23,9 +23,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
 import { ProfileComponent } from './components/profile/profile.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
+import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
 
 
 @NgModule({
@@ -43,7 +43,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ProfileComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    SavedRecipesComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule 
+    AngularFireStorageModule,
+
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService],
   bootstrap: [AppComponent],

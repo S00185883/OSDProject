@@ -7,6 +7,9 @@
     </div>
   </div>
   <div>
+    <button (click)="onSave()">Save Recipe</button>
+    <button (click)="onDelete()">Delete Saved Recipe</button>
+
     <div class="spinner" *ngIf="recipe === undefined"></div>
     <div class="recipe" *ngIf="recipe">
       <h1>{{ recipe.title }}</h1>

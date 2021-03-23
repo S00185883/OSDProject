@@ -1,0 +1,21 @@
+
+
+<div class="row card-group"  *ngFor="let recipe of recipes">
+    <div class="col-sm-2">
+      <div class="card">
+        <img class="card-img-top" src="{{recipe.payload.doc.data().image}}" alt="{{recipe.payload.doc.data().title}} image">
+        <div class="card-body">
+          <h5 class="card-title">{{ recipe.payload.doc.data().title }}</h5>
+          <p class="card-text">Ready in {{ recipe.payload.doc.data().readyInMinutes}} minutes</p>
+          <p class="card-text">Serves {{ recipe.payload.doc.data().servings}} people</p>
+
+          <a href="{{ base_href }}/recipe/{{ recipe.payload.doc.data().id }}" class="btn btn-primary">Go To Recipe</a>
+          <button (click)="onDelete()" class="btn btn-primary">Delete</button>
+
+
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  

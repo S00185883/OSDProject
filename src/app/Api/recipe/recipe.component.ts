@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import {RecipeService} from 'src/app/services/recipe.service'
+import { AngularFirestore } from '@angular/fire/firestore';
 
 import { ResultRecipeDetail } from '../../recipe';
 
@@ -22,11 +24,25 @@ export class RecipeComponent implements OnInit {
       .subscribe((data) => (this.recipe = data));
   };
 
-  constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private route: ActivatedRoute) {
+  constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private route: ActivatedRoute,private firestore: AngularFirestore, private recipeservice:RecipeService ) {
     this.base_href = this.baseHref;
   }
 
   ngOnInit(): void {
+    
     this.getRecipe(this.route.snapshot.paramMap.get('recipeId'));
   }
+  onSave() {
+    
+    let data = this.recipe;
+    
+   this.recipeservice.createSaveRecipe(data);
+       
+}
+onDelete() {
+  let data = this.recipe;
+  this.recipeservice.deleteRecipe(data);
+
+     
+}
 }
