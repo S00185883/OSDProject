@@ -15,9 +15,10 @@ export class RecipeService {
           .add(data)
           .then(res => {}, err => reject(err));
       });
+      
     }
   
-    updateCoffeeOrder(data) {
+    updateRecipe(data) {
       return this.firestore
         .collection("recipe")
         .doc(data.payload.doc.id)

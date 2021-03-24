@@ -1,11 +1,15 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import {RecipeService} from 'src/app/services/recipe.service'
+import * as firebase from 'firebase/app'
+import 'firebase/firestore'
 import { AngularFirestore } from '@angular/fire/firestore';
 
 import { ResultRecipeDetail } from '../../recipe';
+import { timestamp, Timestamp } from 'rxjs/internal/operators/timestamp';
+import { FirestoreDataService } from 'src/app/services/firestore-data.service';
 
 @Component({
   selector: 'app-recipe',
@@ -15,7 +19,7 @@ import { ResultRecipeDetail } from '../../recipe';
 export class RecipeComponent implements OnInit {
   recipe: ResultRecipeDetail;
   base_href: string;
-
+  myDate : string;
   getRecipe = (id: string) => {
     this.http
       .get<ResultRecipeDetail>(
@@ -24,8 +28,10 @@ export class RecipeComponent implements OnInit {
       .subscribe((data) => (this.recipe = data));
   };
 
-  constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private route: ActivatedRoute,private firestore: AngularFirestore, private recipeservice:RecipeService ) {
+  constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private datePipe: DatePipe,private route: ActivatedRoute,private db: AngularFirestore, private recipeservice:RecipeService ) {
     this.base_href = this.baseHref;
+    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+
   }
 
   ngOnInit(): void {
@@ -33,11 +39,12 @@ export class RecipeComponent implements OnInit {
     this.getRecipe(this.route.snapshot.paramMap.get('recipeId'));
   }
   onSave() {
-    
+    this.recipe.dateSaved=this.myDate
     let data = this.recipe;
     
    this.recipeservice.createSaveRecipe(data);
-       
+
+
 }
 onDelete() {
   let data = this.recipe;

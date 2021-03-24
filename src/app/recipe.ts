@@ -13,6 +13,7 @@ export interface ResultRecipe {
 }
 
 export interface ResultRecipeDetail {
+  dateSaved: any;
   id: number;
   title: string;
   readyInMinutes: number;

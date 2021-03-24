@@ -1,30 +1,31 @@
 
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="padding: 10px;">
-      <a class="navbar-brand" href="#"style="font-size:30px">Food for Thought</a>
+    <nav class="navbar navbar-expand-lg navbar navbar-light" style="padding: 10px;background-color: #34242c;color: white;">
+      <a class="navbar-brand" href="#"style="font-size:30px; color: White;">Food for Thought</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarText">
+      <div class="collapse navbar-collapse" id="navbarText" style="color: white;">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active"style="font-size:20px">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            <a class="nav-link" routerLink="/home" routerLinkActive="active"style="color: white;">Home</a>
           </li>
           <li class="nav-item" *ngIf="!ngAuthService.userState"style="font-size:20px">
-            <a class="nav-link" routerLink="/sign-in" routerLinkActive="active">Sign In</a>
+            <a class="nav-link" routerLink="/sign-in" routerLinkActive="active"style="color: white;">Sign In</a>
           </li>
           <li class="nav-item" *ngIf="ngAuthService.userState"style="font-size:20px">
-            <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+            <a class="nav-link" routerLink="/profile" routerLinkActive="active"style="color: white;">Profile</a>
           </li>
           <li class="nav-item" *ngIf="ngAuthService.userState"style="font-size:20px">
-            <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
+            <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active"style="color: white;">Shopping List</a>
           </li>
           <li class="nav-item" *ngIf="ngAuthService.userAdmin"style="font-size:20px">
-            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"style="color: white;">Dashboard</a>
           </li>
           <li class="nav-item" *ngIf="ngAuthService.userState"style="font-size:20px">
-            <a class="nav-link" (click)="ngAuthService.SignOut()" routerLinkActive="active">Sign Out</a>
+            <a class="nav-link" (click)="ngAuthService.SignOut()" routerLinkActive="active"style="color: white;">Sign Out</a>
           </li>
         </ul>
+       
       </div>
     </nav>
    

@@ -26,6 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.
     AngularFireStorageModule,
 
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService,DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
