@@ -1,4 +1,5 @@
 
+
 <head> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></head><div class="container" id="container">
 	
 	<div class="form-container sign-in-container">
@@ -12,7 +13,7 @@
 			<input type="password"  placeholder="Password" #userPwd required/>
 			<button (click)="ngAuthService.SignUp(userEmail.value, userPwd.value)"> Sign Up</button>
       <div class="formGroup"><BR>
-        <button type="button" class="btn btn-danger btn-block" (click)="ngAuthService.GoogleAuth()">
+        <button type="button" (click)="ngAuthService.GoogleAuth()">
           Log in with Google
         </button>
       </div>

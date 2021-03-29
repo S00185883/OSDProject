@@ -49,7 +49,6 @@ export class RecipeComponent implements OnInit {
 onDelete() {
   let data = this.recipe;
   this.recipeservice.deleteRecipe(data);
-
      
 }
 }

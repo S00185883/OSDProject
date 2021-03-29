@@ -1,4 +1,5 @@
-<header style="background-color: #bb7545;">
+<html style="background: linear-gradient(45deg, #eae9ec calc(100% - 300px), #fff calc(100% - 300px), #fff calc(100% - 296px), #0ce18b calc(100% - 296px));">
+<header >
 
   <div class="search" style="background-color: white;">
     <input
@@ -9,9 +10,10 @@
     </svg>
   </div>
 </header>
-<main style="background-color: #bb7545;">
+<main >
   <div id="list-result">
     <app-list-recipes *ngIf="loadingSearch === false" [recipes]="recipes"></app-list-recipes>
     <div class="spinner" *ngIf="loadingSearch"></div>
   </div>
 </main>
+</html>

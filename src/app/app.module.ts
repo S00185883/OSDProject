@@ -25,7 +25,6 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
-import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
 import { DatePipe } from '@angular/common';
 
 
@@ -44,9 +43,8 @@ import { DatePipe } from '@angular/common';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ProfileComponent,
-    ShoppingListComponent,
-    SavedRecipesComponent
-  ],
+    ShoppingListComponent
+    ],
   imports: [
     BrowserModule,
     CommonModule,
