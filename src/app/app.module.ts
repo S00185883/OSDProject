@@ -15,7 +15,6 @@ import { RecipeComponent } from './Api/recipe/recipe.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgAuthService } from "./services/ng-auth.service";
 import { TruncatePipe } from './trunc';
-import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';  
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -26,6 +25,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { DatePipe } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -43,7 +46,7 @@ import { DatePipe } from '@angular/common';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ProfileComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
     ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { DatePipe } from '@angular/common';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule,
+    AngularFireStorageModule, StoreModule.forRoot(reducers, { metaReducers }), !environment.production ? StoreDevtoolsModule.instrument() : [],
 
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService,DatePipe],

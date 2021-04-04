@@ -32,4 +32,12 @@ export class RecipeService {
     deleteRecipe(data) {
       this.firestore.collection('recipe').doc(data).delete();
     }
-  }
+    delete(data): void {
+      this.firestore
+           .collection('recipe')
+           .doc(data)
+           .delete()
+           
+           };
+   }
+  

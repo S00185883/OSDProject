@@ -1,0 +1,88 @@
+#mainBox {
+    width:300px;
+    background-color:#FFF;
+    box-shadow:1px 1px 5px rgba(0,0,0,0.4);
+    font-family:"Lato",sans-serif;
+  }
+  h1 {
+    color:#37c489;
+    font-style:italic;
+    font-size:1.45em;
+    line-height:1.9em;
+    padding:0px;
+    margin:0px;
+    text-align:center;
+  }
+  ul {
+    list-style:none;
+    padding:0px;
+    margin:0px;
+  }
+  li {
+    color:#37c489;
+    position:relative;
+    font-size:1.5em;
+    line-height:1.5em;
+    border-bottom:1px solid #eee;
+  }
+  li:first-child {
+    border-top:1px solid #eee;
+  }
+  li:last-child {
+    border:none;
+  }
+  label {
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0px;
+    border-left:1.2em solid transparent;
+    box-sizing:border-box;
+    cursor:pointer;
+  }
+  body
+  {
+  background-color:#37c489;
+  margin:0px;
+  position:fixed;
+  width:100%;
+  height:100%;
+  display:-ms-flexbox;
+  -ms-flex-pack:center;
+  -ms-flex-align:center;
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  display:flex;
+  box-pack:center;
+  box-align:center;
+  }
+  input[type="checkbox"]:after{
+      width: 1.5em;
+    height: 1.5em;
+    background-color:#FFF;
+    display: inline-block;
+    content:'';
+    color:#37c489;
+    font-size:1.7em;
+    vertical-align:middle;
+  line-height:1.5em;
+    font-weight:bold;
+    transition:all 400ms ease;
+  }
+  input[type="checkbox"]:checked:after{
+  content:"\2713";
+  }
+  
+  input[type="checkbox"]{
+    vertical-align:middle;
+    height: 100%;
+  margin-left:0.45em;
+  }
+  input[type="checkbox"]:not(:checked):hover:after{
+  content:"\2713";
+  color:#c9f5da;
+  }
