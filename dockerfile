@@ -2,15 +2,15 @@
 
 FROM node:10-alpine as build-step
 
-RUN mkdir -p /app
+RUN mkdir -p /app/OSDAngular
 
-WORKDIR /app
+WORKDIR /app/OSDAngular
 
-COPY package.json /app
+COPY package.json /app/OSDAngular
 
 RUN npm install
 
-COPY . /app
+COPY . /app/OSDAngular
 
 RUN npm run build --prod
 
@@ -18,4 +18,4 @@ RUN npm run build --prod
 
 FROM nginx:1.17.1-alpine
 
-COPY --from=build-step /app /usr/share/nginx/html
+COPY --from=build-step /app/OSDAngular /usr/share/nginx/html

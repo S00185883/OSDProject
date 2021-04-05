@@ -23,12 +23,12 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ProfileComponent } from './components/profile/profile.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { DatePipe } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { ListComponent } from './list/list.component';
+import { ListCardComponent } from './components/list-card/list-card.component';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import { environment } from '../environments/environment';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ProfileComponent,
-    ShoppingListComponent,
+    ListComponent,
+    ListCardComponent,
     ],
   imports: [
     BrowserModule,
@@ -60,7 +61,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule, StoreModule.forRoot(reducers, { metaReducers }), !environment.production ? StoreDevtoolsModule.instrument() : [],
+    AngularFireStorageModule, 
 
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService,DatePipe],
