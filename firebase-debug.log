@@ -1,0 +1,25 @@
+[debug] [2021-04-06T14:35:16.532Z] ----------------------------------------------------------------------
+[debug] [2021-04-06T14:35:16.534Z] Command:       /Users/taramcdonagh/.nvm/versions/node/v15.2.0/bin/node /Users/taramcdonagh/.nvm/versions/node/v15.2.0/bin/firebase init
+[debug] [2021-04-06T14:35:16.535Z] CLI Version:   9.8.0
+[debug] [2021-04-06T14:35:16.535Z] Platform:      darwin
+[debug] [2021-04-06T14:35:16.535Z] Node Version:  v15.2.0
+[debug] [2021-04-06T14:35:16.543Z] Time:          Tue Apr 06 2021 15:35:16 GMT+0100 (Irish Standard Time)
+[debug] [2021-04-06T14:35:16.543Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-06T14:35:16.550Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-06T14:35:16.550Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/taramcdonagh/Documents/Collegestuff/OSD/Upload/OSDAngular
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
