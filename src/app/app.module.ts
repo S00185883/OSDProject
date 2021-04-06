@@ -27,8 +27,9 @@ import { DatePipe } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { reducers, metaReducers } from './reducers';
+import {ListModule} from './list/list.module';
 
-import { ListCardComponent } from './components/list-card/list-card.component';
 
 
 @NgModule({
@@ -46,8 +47,6 @@ import { ListCardComponent } from './components/list-card/list-card.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ProfileComponent,
-
-    ListCardComponent,
     ],
   imports: [
     BrowserModule,
@@ -61,7 +60,8 @@ import { ListCardComponent } from './components/list-card/list-card.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule, 
+    AngularFireStorageModule, StoreModule.forRoot(reducers, { metaReducers }), !environment.production ? StoreDevtoolsModule.instrument() : [], 
+    ListModule
 
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/home' },NgAuthService,DatePipe],

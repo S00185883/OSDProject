@@ -5,11 +5,11 @@
       <h1 class="profile-card__title">{{(user.displayName) ? user.displayName : 'User'}}</h1>
       <p class="profile-card__subtitle">{{user.email}}</p><img class="profile-card__avatar" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy.jpg'}}" alt="Avatar for {{(user.displayName) ? user.displayName : 'User'}}"/>
 
-    
+      <app-list-view></app-list-view>
 <h1>Saved Recipes</h1>
-<div class="row card-group">
+<div class="row card-group ">
     <div class="col-sm-2"*ngFor="let recipe of recipes">
-      <div class="card">
+      <div class="card text-white bg-success mb-3">
         <img class="card-img-top" src="{{recipe.payload.doc.data().image}}" alt="{{recipe.payload.doc.data().title}} image">
         <div class="card-body">
           <h5 class="card-title">{{ recipe.payload.doc.data().title }}</h5>          
@@ -21,14 +21,12 @@
 
 
         </div>
-        <div class="card-footer text-muted">
+        <div class="card-footer text-muted" style="color: white;">
           Saved on {{recipe.payload.doc.data().dateSaved| date: 'shortDate'}}        
         </div>
       </div>
     </div>
    
   </div>
-  <h1>Shopping List</h1>
-  <app-list-card></app-list-card>
-  <app-list></app-list>
+  
   </div>

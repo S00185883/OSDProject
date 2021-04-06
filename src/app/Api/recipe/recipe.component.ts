@@ -10,6 +10,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { ResultRecipeDetail } from '../../recipe';
 import { timestamp, Timestamp } from 'rxjs/internal/operators/timestamp';
 import { FirestoreDataService } from 'src/app/services/firestore-data.service';
+import { Store } from '@ngrx/store';
+import { ListState } from 'src/app/list/store/reducer/list.reducer';
+import { List } from 'src/app/models/list';
+import { addList } from 'src/app/list/store/action/list.actions';
 
 @Component({
   selector: 'app-recipe',
@@ -28,7 +32,7 @@ export class RecipeComponent implements OnInit {
       .subscribe((data) => (this.recipe = data));
   };
 
-  constructor(@Inject(APP_BASE_HREF) private baseHref: string, private http: HttpClient, private datePipe: DatePipe,private route: ActivatedRoute,private db: AngularFirestore, private recipeservice:RecipeService ) {
+  constructor(@Inject(APP_BASE_HREF) private baseHref: string,private store: Store<ListState>, private http: HttpClient, private datePipe: DatePipe,private route: ActivatedRoute,private db: AngularFirestore, private recipeservice:RecipeService ) {
     this.base_href = this.baseHref;
     this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
 
@@ -43,9 +47,13 @@ export class RecipeComponent implements OnInit {
     let data = this.recipe;
     
    this.recipeservice.createSaveRecipe(data);
-
-
 }
+addList(listName: string): void {
+  const list = new List();
+  list.ingredient = listName;
+  this.store.dispatch(addList(list));
+}
+
 onDelete() {
   let data = this.recipe;
   this.recipeservice.deleteRecipe(data);

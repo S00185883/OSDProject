@@ -22,9 +22,10 @@
         <p *ngFor="let ingredient of recipe.extendedIngredients">
           <span
             >{{ ingredient.measures.metric.amount | truncate }}
-            {{ ingredient.measures.metric.unitShort }}</span
-          >
+            {{ ingredient.measures.metric.unitShort }}</span>
+            
           {{ ingredient.name }}
+          <button (click)="addList(ingredient.name)">Add</button>
         </p>
       </div>
       <h2>Steps</h2>
