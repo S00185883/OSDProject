@@ -11,9 +11,9 @@ import { ResultRecipeDetail } from '../../recipe';
 import { timestamp, Timestamp } from 'rxjs/internal/operators/timestamp';
 import { FirestoreDataService } from 'src/app/services/firestore-data.service';
 import { Store } from '@ngrx/store';
-import { ListState } from 'src/app/list/store/reducer/list.reducer';
-import { List } from 'src/app/models/list';
-import { addList } from 'src/app/list/store/action/list.actions';
+import { ListState } from 'src/app/components/list/store/reducer/list.reducer';
+import { List } from 'src/app/components/list/models/list';
+import { addList } from 'src/app/components/list/store/action/list.actions';
 
 @Component({
   selector: 'app-recipe',

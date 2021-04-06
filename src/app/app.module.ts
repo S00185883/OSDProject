@@ -27,8 +27,8 @@ import { DatePipe } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { reducers, metaReducers } from './reducers';
-import {ListModule} from './list/list.module';
+import { reducers, metaReducers } from './components/list/reducers';
+import {ListModule} from './components/list/list.module';
 
 
 

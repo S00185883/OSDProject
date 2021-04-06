@@ -1,9 +1,8 @@
 
 import {Action, createReducer, on} from '@ngrx/store';
-2
 import * as ListActions from '../action/list.actions';
 
-import {List} from 'src/app/models/list';
+import {List} from 'src/app/components/list/models/list';
 
 
 export const listFeatureKey = 'list';

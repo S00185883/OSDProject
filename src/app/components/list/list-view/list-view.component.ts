@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
-import {List} from '../../models/list';
+import {List} from 'src/app/components/list/models/list';
 import {select, Store} from '@ngrx/store';
 import {selectLists} from '../store/selector/list.selectors';
 import {ListState} from '../store/reducer/list.reducer';
