@@ -1,8 +1,7 @@
 
-<div id="shoppingList"class="card text-white bg-success mb-3" style="max-width: 18rem; align-self: center;justify-self: center">
+<div id="shoppingList" class="card text-white bg-dark mb-3" style="max-width: 18rem; align-self: center;justify-self: center">
     <div class="card-header">Shopping List</div>
     <div class="card-body"*ngFor="let list of lists$ | async; let i=index">
       <p class="card-text">  <span >{{i+1}}.</span> {{list.ingredient}}
       </p>
     </div>
-  </div>

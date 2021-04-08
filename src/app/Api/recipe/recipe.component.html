@@ -40,6 +40,10 @@
     <div class="row">
       <div class="recipe-image col-md-4">
         <img src="{{recipe.image}}"><br>
+        <button (click)="onDelete()" class="btn btn-danger"style="margin:10px ;">Delete</button>
+        <button (click)="onSave()" class="btn btn-primary"style="margin:10px ;margin-left:220px ;">Save</button>
+
+        <br>
         <div class="recipe-text" >
           <h2><span>summary</span></h2>
           {{recipe.summary}}

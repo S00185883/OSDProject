@@ -110,7 +110,9 @@
 	margin-left: 150px;
 
   }
-
+  b {
+	font-weight: bold;
+  }
   .stats li{
 	display: inline-block;
 	padding: 10px 15px;
