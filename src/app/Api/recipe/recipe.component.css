@@ -57,24 +57,26 @@
  .recipe .recipe-image {
 	 margin-bottom: 2rem;
 }
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
  .recipe .recipe-image img {
 	 outline: solid .1rem rgba(0,0,0,0.3);
 	 border: solid .7rem #FFF;
 }
- .recipe .recipe-blurb {
-	 font: 400 italic 2rem/2.5rem 'Vollkorn';
-	 color: #000;
-	 border-left-color: #2A2C39;
-}
- .recipe .recipe-blurb footer {
-	 font: 400 italic 1.2rem/2.3rem 'Vollkorn';
-	 text-transform: uppercase;
-	 color: #C90707;
-}
+
  .recipe .recipe-text {
 	 margin-bottom: 4rem;
 	 font: normal 1.4rem/2.5rem 'Merriweather';
+	 text-align: left;
+	 justify-content: left;
 }
+/* This is for the ingredients heading */
  .recipe .recipe-text h2 {
 	 margin-bottom: 0;
 	 font: italic 3rem/4.2rem 'Gentium Book Basic';
@@ -87,10 +89,10 @@
 	 padding: 0 1.5rem;
 	 top: -2.2rem;
 	 background-color: #FCFAF2;
+	 text-align: left;
 }
  .recipe .recipe-text ul {
 	 display: table;
-	 margin: 0 auto;
    text-align: left;
 
 }
@@ -100,12 +102,43 @@
    text-align: left;
 
 }
- .recipe .recipe-text ul li strong {
-	 display: table-cell;
-	 padding-right: 3rem;
-   text-align: left;
+.desc .stats {
+	list-style: none;
+	padding-bottom: 10px;
+	align-self: center;
+	justify-content: center;
+	margin-left: 150px;
 
+  }
+
+  .stats li{
+	display: inline-block;
+	padding: 10px 15px;
+	margin-bottom: 1px;
+	margin-left: 150px;
+	min-width: 140px;
+	color: #D64;
+	margin-left: auto;
+	margin-right: auto;
+	border-left: thin dotted #777;
+	justify-content: center;
+align-self: center;
+  }
+  
+  
+  .stats li span, .stats li strong{
+	font-size: 18px;
+  }
+	
+ .recipe .recipe-text ul li strong {
+	 display: inline-block;
+	 padding-right: 10px;
+	 font-size: 1.75rem;
+   text-align: left;
+   text-decoration: black;
 }
+
+
  .recipe .recipe-directions {
 	 margin-bottom: 4rem;
 	 font: normal 1.4rem/2.5rem 'Merriweather';
@@ -130,4 +163,8 @@
 	 margin-bottom: 1.5rem;
 	 list-style-type: decimal;
 }
- 
+.ingredient-list
+{
+	justify-content: left;
+	text-align: left;
+}

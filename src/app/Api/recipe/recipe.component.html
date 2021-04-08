@@ -1,69 +1,61 @@
-<!-- 
-<main>
-  <div>
-    <div class="spinner" *ngIf="recipe === undefined"></div>
-    <div class="card" *ngIf="recipe">
-      <app-recipe-card [recipe]="recipe"></app-recipe-card>
-    </div>
-  </div>
-  <div>
-    <button (click)="onSave()">Save Recipe</button>
-    <button (click)="onDelete()">Delete Saved Recipe</button>
 
-    <div class="spinner" *ngIf="recipe === undefined"></div>
-    <div class="recipe" *ngIf="recipe">
-      <h1>{{ recipe.title }}</h1>
-      <div class="detail">
-        <p>{{ recipe.readyInMinutes }} minutes</p>
-        <p>{{ recipe.servings }} servings</p>
-      </div>
-      <h2>Ingredients</h2>
-      <div class="ingredients">
-        <p *ngFor="let ingredient of recipe.extendedIngredients">
-          <span
-            >{{ ingredient.measures.metric.amount | truncate }}
-            {{ ingredient.measures.metric.unitShort }}</span>
-            
-          {{ ingredient.name }}
-          <button (click)="addList(ingredient.name)">Add</button>
-        </p>
-      </div>
-      <h2>Steps</h2>
-      <div>
-        <ol *ngFor="let instruction of recipe.analyzedInstructions">
-          <li *ngFor="let step of instruction.steps">
-            {{ step.step }}
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</main> -->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <article class="recipe">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <div class="jumbotron">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <h1>{{recipe.title}}</h1>
+          <h2 class="disclaimer"></h2>
         </div>
       </div>
     </div>
+  
+  <div class="desc">
+    <ul class="stats">
+      <li>Rating: <br />
+        <span class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+        </span>
+      </li>
+      
+      <li>Weight Watcher Points: <br /><strong>{{recipe.weightWatcherSmartPoints}}</strong></li>
+      <li>Health score: <br /><strong>{{ recipe.healthScore }}%</strong></li>
+      <li>Total time: <br /><strong>{{ recipe.readyInMinutes }} minutes</strong></li>
+      <li id="feed">Feeds: <br /><strong><span id="current-servings">{{ recipe.servings }} </span> people</strong> </li>
+      <li>Vegan: <br /><strong>{{ recipe.vegan }}</strong></li>
+      <li>Gluten Free: <br /><strong>{{ recipe.glutenFree}}</strong></li>
+      <li>Dairy Free: <br /><strong>{{ recipe.dairyFree }}</strong></li>
+    </ul>
   </div>
+</div>
   <div class="container">
     <div class="row">
       <div class="recipe-image col-md-4">
-        <img src="{{recipe.image}}">
+        <img src="{{recipe.image}}"><br>
+        <div class="recipe-text" >
+          <h2><span>summary</span></h2>
+          {{recipe.summary}}
+       
+  </div>
       </div>
       <div class="col-md-8">
       
         <div class="row">
-          <div class="col-sm-5 recipe-text">
+          <div class="col-sm-5 recipe-text" >
             <h2><span>Ingredients</span></h2>
-            <div class="ingredient-list" style="justify-content: left;">
-              <ul *ngFor="let ingredient of recipe.extendedIngredients">
-                <li><strong>{{ ingredient.measures.metric.amount | truncate }}
-                  {{ ingredient.measures.metric.unitShort }}</strong>{{ ingredient.name }}</li>
-               
+            <div class="ingredient-list" style="text-align: left;">
+              <ul *ngFor="let ingredient of recipe.extendedIngredients" style="text-align: left;">
+                <li style="text-align: left;"><strong style="font-weight: bold;">{{ ingredient.measures.metric.amount | truncate }}
+                  {{ ingredient.measures.metric.unitShort }}  </strong>{{ ingredient.name }}  <button class="button"(click)="addList(ingredient.name)"><i class="fa fa-shopping-cart"></i></button></li>
+                 
               </ul>
             </div>
           </div>
