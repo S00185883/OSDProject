@@ -22,8 +22,10 @@ import { addList } from 'src/app/components/list/store/action/list.actions';
 })
 export class RecipeComponent implements OnInit {
   recipe: ResultRecipeDetail;
+  strippedString:string;
   base_href: string;
   myDate : string;
+  
   getRecipe = (id: string) => {
     this.http
       .get<ResultRecipeDetail>(
@@ -35,12 +37,15 @@ export class RecipeComponent implements OnInit {
   constructor(@Inject(APP_BASE_HREF) private baseHref: string,private store: Store<ListState>, private http: HttpClient, private datePipe: DatePipe,private route: ActivatedRoute,private db: AngularFirestore, private recipeservice:RecipeService ) {
     this.base_href = this.baseHref;
     this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-
   }
 
   ngOnInit(): void {
     
     this.getRecipe(this.route.snapshot.paramMap.get('recipeId'));
+    while (this.recipe.summary.includes("<"))
+    {
+        this.recipe.cutsummary=this.recipe.summary.replace(/(<([^>]+)>)/gi, "");
+    }
   }
   onSave() {
     this.recipe.dateSaved=this.myDate

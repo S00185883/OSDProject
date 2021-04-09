@@ -40,6 +40,7 @@ export interface ResultRecipeDetail {
   image: string;
   imageType: string;
   summary: string;
+  cutsummary:string;
   cuisines: string[];
   dishTypes: string[];
   diets: string[];

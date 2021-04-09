@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <article class="recipe">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<div class="recipe" *ngIf="recipe">
   <div class="jumbotron">
     <div class="container">
       <div class="row">
@@ -46,7 +47,7 @@
         <br>
         <div class="recipe-text" >
           <h2><span>summary</span></h2>
-          {{recipe.summary}}
+          {{recipe.cutsummary}}
        
   </div>
       </div>
@@ -75,4 +76,5 @@
       </div>
     </div>
   </div>
+</div>
 </article>
