@@ -3,7 +3,8 @@
   
     <div class="profile-card">
       <h1 class="profile-card__title">{{(user.displayName) ? user.displayName : 'User'}}</h1>
-      <p class="profile-card__subtitle">{{user.email}}</p><img class="profile-card__avatar" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy.jpg'}}" alt="Avatar for {{(user.displayName) ? user.displayName : 'User'}}"/>
+      <p class="profile-card__subtitle">{{user.email}}</p>
+      <img class="profile-card__avatar" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy.jpg'}}" alt="Avatar for {{(user.displayName) ? user.displayName : 'User'}}"/>
 
       <app-list-view></app-list-view>
 <h1>Saved Recipes</h1>
@@ -18,11 +19,6 @@
 
           <a href="{{ base_href }}/recipe/{{ recipe.payload.doc.data().id }}" class="btn btn-primary" style="color: white;">Recipe</a>
           <button (click)="onDelete()" class="btn btn-danger">Delete</button>
-
-
-        </div>
-        <div class="card-footer text-muted" style="color: white;">
-          Saved on {{recipe.payload.doc.data().dateSaved| date: 'shortDate'}}        
         </div>
       </div>
     </div>

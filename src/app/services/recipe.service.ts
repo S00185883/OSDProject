@@ -33,11 +33,9 @@ export class RecipeService {
       this.firestore.collection('recipe').doc(data).delete();
     }
     delete(data): void {
-      this.firestore
-           .collection('recipe')
-           .doc(data)
-           .delete()
+      this.firestore.collection('testCollection').doc(data.id).delete();
            
            };
    }
   
+   

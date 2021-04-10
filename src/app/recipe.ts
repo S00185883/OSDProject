@@ -1,5 +1,5 @@
 export interface Recipe {
-  id: number;
+  id: string;
   title: string;
   image: string;
   imageType: string;
@@ -14,7 +14,8 @@ export interface ResultRecipe {
 
 export interface ResultRecipeDetail {
   dateSaved: any;
-  id: number;
+  stars:number;
+  id: string;
   title: string;
   readyInMinutes: number;
   servings: number;

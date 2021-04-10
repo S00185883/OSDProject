@@ -102,6 +102,10 @@
    text-align: left;
 
 }
+.star
+{
+	height: 25px;
+}
 .desc .stats {
 	list-style: none;
 	padding-bottom: 10px;

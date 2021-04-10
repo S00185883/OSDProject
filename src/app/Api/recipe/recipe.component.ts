@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Pipe, Input } from '@angular/core';
 import { APP_BASE_HREF, DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
@@ -6,6 +6,7 @@ import {RecipeService} from 'src/app/services/recipe.service'
 import * as firebase from 'firebase/app'
 import 'firebase/firestore'
 import { AngularFirestore } from '@angular/fire/firestore';
+import { of } from 'rxjs';
 
 import { ResultRecipeDetail } from '../../recipe';
 import { timestamp, Timestamp } from 'rxjs/internal/operators/timestamp';
@@ -14,18 +15,25 @@ import { Store } from '@ngrx/store';
 import { ListState } from 'src/app/components/list/store/reducer/list.reducer';
 import { List } from 'src/app/components/list/models/list';
 import { addList } from 'src/app/components/list/store/action/list.actions';
-
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
 })
+
+
+
 export class RecipeComponent implements OnInit {
+  @Input() public star: Observable<any>;
   recipe: ResultRecipeDetail;
   strippedString:string;
   base_href: string;
   myDate : string;
-  
+  stars:number;
+  roundstars:number;
+
+ 
   getRecipe = (id: string) => {
     this.http
       .get<ResultRecipeDetail>(
@@ -42,10 +50,7 @@ export class RecipeComponent implements OnInit {
   ngOnInit(): void {
     
     this.getRecipe(this.route.snapshot.paramMap.get('recipeId'));
-    while (this.recipe.summary.includes("<"))
-    {
-        this.recipe.cutsummary=this.recipe.summary.replace(/(<([^>]+)>)/gi, "");
-    }
+   
   }
   onSave() {
     this.recipe.dateSaved=this.myDate
@@ -63,5 +68,11 @@ onDelete() {
   let data = this.recipe;
   this.recipeservice.deleteRecipe(data);
      
+}
+
+getStars()
+{
+this.stars=this.recipe.spoonacularScore*0.05
+return this.stars;
 }
 }
