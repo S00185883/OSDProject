@@ -9,5 +9,7 @@ export const environment = {
   messagingSenderId: "62726120902",
   appId: "1:62726120902:web:ae0bdb169d62c1882cfec7",
   measurementId: "G-9SHMQ7B72P"
-  }
+  },
+  databaseUri:"https://us-central1-project-d49bb.cloudfunctions.net/webApi"
+
 };

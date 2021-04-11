@@ -32,6 +32,7 @@ export class RecipeComponent implements OnInit {
   myDate : string;
   stars:number;
   roundstars:number;
+  
 
  
   getRecipe = (id: string) => {
@@ -66,7 +67,7 @@ addList(listName: string): void {
 
 onDelete() {
   let data = this.recipe;
-  this.recipeservice.deleteRecipe(data);
+  this.recipeservice.deleteRecipe(this.recipe);
      
 }
 

@@ -7,11 +7,10 @@
     <div class="formGroup" *ngIf="ngAuthService.userState as user">
       <p class="text-center">Confirmation mail has been sent to <strong>{{user.email}}</strong>.</p>
     </div>
-			<input type="email" placeholder="Email Address" #passwordResetEmail required/><br><br>
 			<button 
       (click)="ngAuthService.SendVerificationMail()">Resend Verification Email</button>
 	  <BR>
-      <button  id="signUp"routerLink="/sign-in">Sign In</button> 
+      <button  id="signIn"routerLink="/sign-in">Sign In</button> 
    </form>
 	</div>
   </div>

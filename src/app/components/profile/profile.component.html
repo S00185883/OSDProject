@@ -1,6 +1,5 @@
 
   <div class="user-profile" *ngIf="ngAuthService.userState as user">
-  
     <div class="profile-card">
       <h1 class="profile-card__title">{{(user.displayName) ? user.displayName : 'User'}}</h1>
       <p class="profile-card__subtitle">{{user.email}}</p>
@@ -9,8 +8,8 @@
       <app-list-view></app-list-view>
 <h1>Saved Recipes</h1>
 <div class="row card-group ">
-    <div class="col-sm-2"*ngFor="let recipe of recipes">
-      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="col-sm-2"*ngFor="let recipe of recipes"style="margin: 5%;">
+      <div class="card text-white bg-dark mb-3">
         <img class="card-img-top" src="{{recipe.payload.doc.data().image}}" alt="{{recipe.payload.doc.data().title}} image">
         <div class="card-body">
           <h5 class="card-title">{{ recipe.payload.doc.data().title }}</h5>          
@@ -21,6 +20,7 @@
           <button (click)="onDelete()" class="btn btn-danger">Delete</button>
         </div>
       </div>
+      <div>
     </div>
    
   </div>

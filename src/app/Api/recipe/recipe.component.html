@@ -1,6 +1,7 @@
 
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <article class="recipe">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -43,13 +44,13 @@
     <div class="row">
       <div class="recipe-image col-md-4">
         <img src="{{recipe.image}}"><br>
-        <button (click)="onDelete()" class="btn btn-danger"style="margin:10px ;">Delete</button>
-        <button (click)="onSave()" class="btn btn-primary"style="margin:10px ;margin-left:220px ;">Save</button>
+        <button (click)="onDelete()" class="btn btn-danger"style="margin:10px ;">Delete Saved</button>
+        <button (click)="onSave()" class="btn btn-primary"style="margin:10px ;margin-left:20% ;">Save</button>
 
         <br>
-        <div class="recipe-text" >
+        <div class="recipe-text" ng-bind-html="thisCanBeusedInsideNgBindHtml">
           <h2><span>summary</span></h2>
-          {{recipe.summary}}
+          <p [innerHTML]="recipe.summary"></p>
        
   </div>
       </div>
@@ -80,3 +81,4 @@
   </div>
 </div>
 </article>
+<script src="lib/angular/angular-sanitize.min.js"></script>
